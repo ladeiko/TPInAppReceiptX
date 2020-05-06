@@ -1,17 +1,33 @@
 <p align="center">
-  <img height="160" src="https://github.com/tikhop/TPInAppReceipt/blob/master/www/logo.png" />
+  <img height="160" src="https://github.com/tikhop/TPInAppReceiptX/blob/master/www/logo.png" />
 </p>
 
+# NOTE!!!
+It's just a fork from  [https://github.com/tikhop/TPInAppReceipt](https://github.com/tikhop/TPInAppReceipt). 
 
-# TPInAppReceipt
+To prevent missleading i just add 'X' suffix to the original name (TPInAppReceiptX). 
+
+__Greate thanks to original author!!!__
+
+# TPInAppReceiptX
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TPInAppReceipt.svg)](https://cocoapods.org/pods/TPInAppReceipt)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TPInAppReceiptX.svg)](https://cocoapods.org/pods/TPInAppReceiptX)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![Platform](https://img.shields.io/cocoapods/p/TPInAppReceipt.svg?style=flat)]()
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/tikhop/TPInAppReceipt/master/LICENSE)
+[![Platform](https://img.shields.io/cocoapods/p/TPInAppReceiptX.svg?style=flat)]()
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ladeiko/TPInAppReceiptX/master/LICENSE)
 
 A lightweight iOS/OSX library for reading and validating Apple In App Purchase Receipt locally.
+
+## Differences
+
+Between TPInAppReceipt and TPInAppReceiptX:
+
+|                                 |  TPInAppReceipt |  TPInAppReceiptX |
+|---------------------------------|-----------------|------------------|
+| is static framework             |       ❌        |       ✅         |
+| subscriptionTrialPricePeriod    |       ❌        |       ✅         |
+
 
 ## Features
 
@@ -27,7 +43,7 @@ Installation
 
 ### CocoaPods
 
-To integrate TPInAppReceipt into your project using CocoaPods, specify it in your `Podfile`:
+To integrate TPInAppReceiptX into your project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 platform :ios, '9.0'
@@ -35,7 +51,7 @@ platform :ios, '9.0'
 target 'YOUR_TARGET' do
     use_frameworks!
 
-    pod 'TPInAppReceipt'
+    pod 'TPInAppReceiptX'
 end
 
 ```
@@ -46,17 +62,17 @@ Then, run the following command:
 $ pod install
 ```
 
-In any swift file you'd like to use TPInAppReceipt, import the framework with `import TPInAppReceipt`.
+In any swift file you'd like to use TPInAppReceiptX, import the framework with `import TPInAppReceiptX`.
 
 ### Swift Package Manager
 
 To integrate using Apple's Swift package manager, add the following as a dependency to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/tikhop/TPInAppReceipt.git", .upToNextMajor(from: "2.4.0"))
+.package(url: "https://github.com/ladeiko/TPInAppReceiptX.git", .upToNextMajor(from: "2.4.0"))
 ```
 
-Then, specify `"TPInAppReceipt"` as a dependency of the Target in which you wish to use TPInAppReceipt.
+Then, specify `"TPInAppReceiptX"` as a dependency of the Target in which you wish to use TPInAppReceiptX.
 
 Lastly, run the following command:
 ```swift
@@ -72,7 +88,7 @@ Currenty, SwiftPM doesn't support the feature of adding resources to package and
 Make the following entry in your Cartfile:
 
 ```
-github "tikhop/TPInAppReceipt" 
+github "ladeiko/TPInAppReceiptX" 
 ```
 
 Then run `carthage update`.
@@ -200,4 +216,8 @@ try? r.verifySignature()
 
 ## License
 
-TPInAppReceipt is released under an MIT license. See [LICENSE](https://github.com/tikhop/TPInAppReceipt/blob/master/LICENSE) for more information.
+TPInAppReceiptX is released under an MIT license. 
+
+See [LICENSE](https://github.com/ladeiko/TPInAppReceiptX/blob/master/LICENSE) for more information. 
+
+See [ORIGINAL_LICENSE](https://github.com/tikhop/TPInAppReceipt/blob/master/LICENSE) for more information.

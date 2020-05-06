@@ -1,0 +1,16 @@
+PODS:
+  - TPInAppReceiptX (2.4)
+
+DEPENDENCIES:
+  - TPInAppReceiptX (from `..`)
+
+EXTERNAL SOURCES:
+  TPInAppReceiptX:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  TPInAppReceiptX: b9f1bc66e473bc652bdb9372e083f969302ce44a
+
+PODFILE CHECKSUM: 0fcc5b1068d6f8735e7e0bcd7544e8272ea763ee
+
+COCOAPODS: 1.8.4

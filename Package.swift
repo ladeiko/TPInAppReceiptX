@@ -3,13 +3,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "TPInAppReceipt",
+    name: "TPInAppReceiptX",
     products: [
-        .library(name: "TPInAppReceipt", targets: ["TPInAppReceipt"]),
+        .library(name: "TPInAppReceiptX", targets: ["TPInAppReceiptX"]),
     ],
     targets: [
         .target(
-            name: "TPInAppReceipt",
+            name: "TPInAppReceiptX",
 			path: "TPInAppReceipt/Source")
     ]
 )
