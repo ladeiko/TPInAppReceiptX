@@ -3,10 +3,18 @@
 //  TPInAppReceipt
 //
 //  Created by Pavel Tikhonenko on 19/01/17.
+//  Updated by Siarhei Ladzeika
 //  Copyright © 2017 Pavel Tikhonenko. All rights reserved.
+//  Copyright © 2019-present Siarhei Ladzeika. All rights reserved.
 //
 
 import Foundation
+
+fileprivate let dateFormatter = { () -> DateFormatter in
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+    return formatter
+}()
 
 public struct InAppPurchase
 {
@@ -24,17 +32,21 @@ public struct InAppPurchase
     
     /// Original Purchase Date in string format
     public var originalPurchaseDateString: String
-    
+
     /// Subscription Expiration Date in string format. Returns `nil` if the purchase is not a renewable subscription
     public var subscriptionExpirationDateString: String? = nil
-    
+
     /// Cancellation Date in string format. Returns `nil` if the purchase is not a renewable subscription
     public var cancellationDateString: String? = nil
 
     /// This value is `true` if the customer’s subscription is currently in an introductory price period, or `false` if not.
     /// Returns `nil` if the purchase is not a renewable subscription
     public var subscriptionIntroductoryPricePeriod: Bool? = nil
-    
+
+    /// This value is `true` if the customer’s subscription is currently in trial price period, or `false` if not.
+    /// Returns `nil` if the purchase is not a renewable subscription
+    public var subscriptionTrialPricePeriod: Bool? = nil
+
     ///
     public var webOrderLineItemID: Int? = nil
     
@@ -87,6 +99,9 @@ public struct InAppPurchase
                     webOrderLineItemID = ASN1.readInt(from: &value)
                 case .subscriptionIntroductoryPricePeriod:
                     subscriptionIntroductoryPricePeriod = ASN1.readInt(from: &value) != 0
+                case .subscriptionTrialPricePeriod:
+                    subscriptionTrialPricePeriod = ASN1.readInt(from: &value) != 0
+
                 default:
                     break
                 }
@@ -102,6 +117,12 @@ public extension InAppPurchase
     {
         return purchaseDateString.rfc3339date()!
     }
+
+    /// Original Purchase Date representation as a 'Date' object
+    var originalPurchaseDate: Date
+    {
+        return originalPurchaseDateString.rfc3339date()!
+    }
     
     /// Subscription Expiration Date representation as a 'Date' object. Returns `nil` if the purchase has been expired (in some cases)
     var subscriptionExpirationDate: Date?
@@ -109,6 +130,14 @@ public extension InAppPurchase
         assert(isRenewableSubscription, "\(productIdentifier) is not an auto-renewable subscription.")
        
         return subscriptionExpirationDateString?.rfc3339date()
+    }
+
+    /// Cancellation Date representation as a 'Date' object. Returns `nil` if the purchase has not been cancelled
+    var cancellationDate: Date?
+    {
+        assert(isRenewableSubscription, "\(productIdentifier) is not an auto-renewable subscription.")
+
+        return cancellationDateString?.rfc3339date()
     }
     
     /// A Boolean value indicating whether the purchase is renewable subscription.

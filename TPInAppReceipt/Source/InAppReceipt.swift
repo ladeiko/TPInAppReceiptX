@@ -3,7 +3,9 @@
 //  TPReceiptValidator
 //
 //  Created by Pavel Tikhonenko on 28/09/16.
+//  Updated by Siarhei Ladzeika
 //  Copyright © 2016 Pavel Tikhonenko. All rights reserved.
+//  Copyright © 2019-present Siarhei Ladzeika. All rights reserved.
 //
 
 import Foundation
@@ -29,6 +31,7 @@ public enum InAppReceiptField: Int
     case webOrderLineItemID = 1711
     case cancellationDate = 1712
     case subscriptionIntroductoryPricePeriod = 1719
+    case subscriptionTrialPricePeriod = 1713
 }
 
 public struct InAppReceipt
