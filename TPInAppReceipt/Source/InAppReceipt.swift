@@ -198,7 +198,7 @@ public extension InAppReceipt
     /// `nil` otherwise
     ///
     /// - parameter productIdentifier: Product name
-    func activeAutoRenewableSubscriptionPurchases(ofProductIdentifier productIdentifier: String, forDate date: Date) -> InAppPurchase?
+    func activeAutoRenewableSubscriptionPurchases(ofProductIdentifier productIdentifier: String, forDate date: Date = Date()) -> InAppPurchase?
     {
         let filtered = purchases(ofProductIdentifier: productIdentifier)
         
