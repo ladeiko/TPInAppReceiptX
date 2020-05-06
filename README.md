@@ -25,7 +25,6 @@ Between TPInAppReceipt and TPInAppReceiptX:
 
 |                                 |  TPInAppReceipt |  TPInAppReceiptX |
 |---------------------------------|-----------------|------------------|
-| is static framework             |       ❌        |       ✅         |
 | subscriptionTrialPricePeriod    |       ❌        |       ✅         |
 
 

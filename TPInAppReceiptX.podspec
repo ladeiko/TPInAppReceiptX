@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "TPInAppReceiptX"
-s.version      = "2.4"
+s.version      = "2.4.1"
 s.summary      = "Decode Apple Store Receipt and make it easy to read and validate it"
 s.description  = "The library provides transparent way to decode and validate Apple Store Receipt. Pure swift, No OpenSSL!"
 
@@ -17,7 +17,6 @@ s.osx.deployment_target = '10.10'
 s.tvos.deployment_target = '9.0'
 s.watchos.deployment_target = '2.0'
 s.requires_arc = true
-s.static_framework = true
 
 s.source_files  = "TPInAppReceipt/Source/*.{swift}", "TPInAppReceipt/Source/Vendor/CryptoSwift/*.{swift}"
 
