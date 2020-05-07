@@ -3,13 +3,9 @@
 //  TPInAppReceipt
 //
 //  Created by Pavel Tikhonenko on 19/01/17.
-<<<<<<< HEAD
 //  Updated by Siarhei Ladzeika
 //  Copyright © 2017 Pavel Tikhonenko. All rights reserved.
 //  Copyright © 2019-present Siarhei Ladzeika. All rights reserved.
-=======
-//  Copyright © 2017-2020 Pavel Tikhonenko. All rights reserved.
->>>>>>> upstream/master
 //
 
 import Foundation
