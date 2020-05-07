@@ -69,7 +69,7 @@ In any swift file you'd like to use TPInAppReceiptX, import the framework with `
 To integrate using Apple's Swift package manager, add the following as a dependency to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/ladeiko/TPInAppReceiptX.git", .upToNextMajor(from: "2.4.0"))
+.package(url: "https://github.com/ladeiko/TPInAppReceiptX.git", .upToNextMajor(from: "2.5.0"))
 ```
 
 Then, specify `"TPInAppReceiptX"` as a dependency of the Target in which you wish to use TPInAppReceiptX.

@@ -11,7 +11,11 @@ s.source       = { :git => "https://github.com/ladeiko/TPInAppReceiptX.git", :ta
 
 s.author       = { "Pavel Tikhonenko" => "hi@tikhop.com", "Siarhei Ladzeika" => "sergey.ladeiko@gmail.com" }
 
+<<<<<<< HEAD:TPInAppReceiptX.podspec
 s.swift_version = [ '4.2', '5.0', '5.1', '5.2']
+=======
+s.swift_versions = ['5.0', '5.1', '5.2']
+>>>>>>> upstream/master:TPInAppReceipt.podspec
 s.ios.deployment_target = '9.0'
 s.osx.deployment_target = '10.10'
 s.tvos.deployment_target = '9.0'
