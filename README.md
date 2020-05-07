@@ -25,8 +25,9 @@ Between TPInAppReceipt and TPInAppReceiptX:
 
 |                                 |  TPInAppReceipt |  TPInAppReceiptX |
 |---------------------------------|-----------------|------------------|
-| subscriptionTrialPricePeriod    |       ❌        |       ✅         |
+| ~~subscriptionTrialPeriod~~    |       ❌        |       ✅         |
 
+subscriptionTrialPeriod - now supported in TPInAppReceipt 2.5.0
 
 ## Features
 

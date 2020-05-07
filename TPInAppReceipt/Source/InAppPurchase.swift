@@ -45,7 +45,7 @@ public struct InAppPurchase
 
     /// This value is `true` if the customer’s subscription is currently in trial price period, or `false` if not.
     /// Returns `nil` if the purchase is not a renewable subscription
-    public var subscriptionTrialPricePeriod: Bool? = nil
+    public var subscriptionTrialPeriod: Bool? = nil
 
     ///
     public var webOrderLineItemID: Int? = nil
@@ -99,8 +99,8 @@ public struct InAppPurchase
                     webOrderLineItemID = ASN1.readInt(from: &value)
                 case .subscriptionIntroductoryPricePeriod:
                     subscriptionIntroductoryPricePeriod = ASN1.readInt(from: &value) != 0
-                case .subscriptionTrialPricePeriod:
-                    subscriptionTrialPricePeriod = ASN1.readInt(from: &value) != 0
+                case .subscriptionTrialPeriod:
+                    subscriptionTrialPeriod = ASN1.readInt(from: &value) != 0
 
                 default:
                     break
