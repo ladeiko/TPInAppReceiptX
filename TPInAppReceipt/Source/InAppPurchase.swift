@@ -16,6 +16,15 @@ fileprivate let dateFormatter = { () -> DateFormatter in
     return formatter
 }()
 
+public enum InAppType: Int
+{
+    case unknown = -1
+    case nonConsumable = 0
+    case consumable = 1
+    case nonRenewingSubscription = 2
+    case autoRenewableSubscription = 3
+}
+
 public struct InAppPurchase
 {
     /// The product identifier which purchase related to
@@ -51,6 +60,9 @@ public struct InAppPurchase
     /// Returns nil if no any discount was used when purchase.
     public var discountIdentifier: String? = nil
 
+    /// Type of purchase
+    public var type: InAppType
+
     ///
     public var webOrderLineItemID: Int? = nil
     
@@ -65,6 +77,7 @@ public struct InAppPurchase
         purchaseDateString = ""
         originalPurchaseDateString = ""
         quantity = 0
+        type = .unknown
     }
     
     public init(asn1Data: Data)
@@ -107,6 +120,8 @@ public struct InAppPurchase
                     subscriptionIntroductoryPricePeriod = ASN1.readInt(from: &value) != 0
                 case .discountIdentifier:
                     discountIdentifier = ASN1.readString(from: &value, encoding: .utf8)
+                case .type:
+                    type = InAppType(rawValue: ASN1.readInt(from: &value)) ?? .unknown
                 default:
                     break
                 }
