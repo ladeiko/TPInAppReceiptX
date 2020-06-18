@@ -27,7 +27,7 @@ Between TPInAppReceipt and TPInAppReceiptX:
 |---------------------------------|-----------------|------------------|
 | ~~subscriptionTrialPeriod~~    |       ✅ (supported since TPInAppReceipt 2.5.0)       |       ✅         |
 | discountIdentifier |       ❌        |       ✅         |
-| typw |       ❌        |       ✅         |
+| type |       ❌        |       ✅         |
 
 
 ## Features
