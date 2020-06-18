@@ -47,6 +47,10 @@ public struct InAppPurchase
     /// Returns `nil` if the purchase is not a renewable subscription
     public var subscriptionIntroductoryPricePeriod: Bool? = nil
 
+    /// This value returns discount identifier used while purchase
+    /// Returns nil if no any discount was used when purchase.
+    public var discountIdentifier: String? = nil
+
     ///
     public var webOrderLineItemID: Int? = nil
     
@@ -101,7 +105,8 @@ public struct InAppPurchase
                     subscriptionTrialPeriod = ASN1.readInt(from: &value) != 0
                 case .subscriptionIntroductoryPricePeriod:
                     subscriptionIntroductoryPricePeriod = ASN1.readInt(from: &value) != 0
-
+                case .discountIdentifier:
+                    discountIdentifier = ASN1.readString(from: &value, encoding: .utf8)
                 default:
                     break
                 }

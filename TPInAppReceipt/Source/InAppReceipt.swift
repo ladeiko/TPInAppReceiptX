@@ -32,6 +32,7 @@ public enum InAppReceiptField: Int
     case cancellationDate = 1712
     case subscriptionTrialPeriod = 1713
     case subscriptionIntroductoryPricePeriod = 1719
+    case discountIdentifier = 1721
 }
 
 public struct InAppReceipt
